@@ -132,3 +132,18 @@ Mesmo com o avanço significativo da frota de veículos elétricos, são necess�
 organização, responsabilidade técnica e diálogo entre os residentes antes de
 fato realizar a sua implementação nos condomínios.
 
+<div align="center">
+  <h1>Fontes e Referências</h1>
+</div>
+
+- **ABVE (Associação Brasileira do Veículo Elétrico):** [Eletrificados crescem dez vezes mais do que conjunto do mercado em 2025, com 224 mil veículos vendidos](https://abve.org.br/eletrificados-crescem-dez-vezes-mais-do-que-conjunto-do-mercado-em-2025-com-224-mil-veiculos-vendidos/)
+
+- **Folha de S.Paulo:** [Rede de recarga cresce e tenta acompanhar alta nas vendas de carros elétricos](https://www1.folha.uol.com.br/colunas/eduardosodre/2026/06/rede-de-recarga-cresce-e-tenta-acompanhar-alta-nas-vendas-de-carros-eletricos.shtml)
+
+- **Portal Solar:** [Mobilidade elétrica acelera no Brasil e abre nova frente de negócios para integradores de energia](https://www.portalsolar.com.br/noticias/tecnologia/mobilidade-eletrica/mobilidade-eletrica-acelera-no-brasil-e-abre-nova-frente-de-negocios-para-integradores-de-energia)
+
+- **Jornal Cruzeiro do Sul:** [Instalação de carregadores de veículos elétricos é desafio para condomínios](https://www.jornalcruzeiro.com.br/sorocaba/noticias/2026/03/758883-instalacao-de-carregadores-de-veiculos-eletricos-e-desafio-para-condominios.html)
+
+- **IstoÉ Dinheiro:** [Censo mostra que 84,8% dos brasileiros moram em casas e 12,5% em apartamentos](https://istoedinheiro.com.br/censo-mostra-que-848-dos-brasileiros-moram-em-casas-e-125-em-apartamentos)
+
+- **IBGE:** [Características dos Domicílios – Censo 2022](https://educa.ibge.gov.br/jovens/conheca-o-brasil/populacao/22064-caracteristicas-dos-domicilios-censo-2022.html)
