@@ -13,6 +13,7 @@ vendidas, registrando um novo recorde anual da série histórica da ABVE e um
 crescimento de 26% sobre os números de 2024 (177.358). 
 
 ![Gráfico de Evolução da Frota ](assets/evolucao_frota.png)
+*Fonte: ABVE (Associação Brasileira do Veículo Elétrico)*
 
 Ademais, o ponto crucial para o planejamento urbano é que 81\%
 dessa frota (181.542 veículos) é composta por modelos BEV e PHEV, os quais
@@ -73,6 +74,7 @@ percentual foi registrado no Sudeste (16%), seguido pelo Sul (14,4%), e o Norte
 171,3 milhões de pessoas moram em casas, o que equivale a 84,8% da população.
 
 ![Gráfico de Residência em Apartamentos](assets/censo_ibge.png)
+*Fonte: Censo Demográfico 2022 - IBGE*
 
 Diante da impraticabilidade técnica de instalar um
 carregador exclusivo para cada morador em garagens coletivas, se destaca o
