@@ -244,6 +244,268 @@ O foco da empresa é atender apenas os instaladores parceiros. Com isso, há div
 | **Limitações / Brechas** | Pós-venda inacessível ao cliente final e recusa de suporte para compras não oficiais. | Descaso no suporte técnico, falhas críticas de software/app e desgaste do hardware. | Vazamento de dados, falhas no bloqueio de saldo e atendimento terceirizado ineficaz. |
 
 <div align="center">
+  <h1>Viabilidade Legal e Técnica da Solução</h1>
+</div>
+
+## 1. Introdução
+O objetivo da solução é permitir o monitoramento do consumo energético dos carregadores, a divisão adequada dos custos entre usuários e a otimização do uso da energia elétrica, especialmente quando integrada a sistemas fotovoltaicos.
+
+A proposta busca atender às exigências regulatórias brasileiras, garantindo segurança operacional, transparência financeira e eficiência energética.
+## 2. Mapeamento Regulatório
+### 2.1 Resolução Normativa nº 1000/2021 da ANEEL
+
+A RN nº 1000/2021 consolidou diversas regras referentes à distribuição de energia elétrica no Brasil. A norma estabelece diretrizes para medição, faturamento e responsabilidades entre consumidores e distribuidoras.
+
+Para a implementação da solução, destacam-se os seguintes pontos:
+
+**Responsabilidades:**
+
+- O consumo de cada usuário deve ser individualizado sempre que possível;
+- A instalação não pode comprometer a segurança da rede interna do condomínio;
+- O condomínio deve manter registros claros sobre a utilização da infraestrutura compartilhada;
+- A distribuidora deve ser comunicada caso haja necessidade de aumento de carga instalada.
+
+### 2.2 Cobrança de Recarga Compartilhada
+
+A cobrança compartilhada pode ocorrer através de três modelos.
+
+**Modelo 1 - Medição Individual**
+
+Cada carregador possui seu próprio medidor de energia.
+
+Vantagens:
+
+- Maior transparência;
+- Fácil auditoria;
+- Menor risco de conflitos.
+
+**Modelo 2 - Rateio Proporcional**
+
+O consumo é registrado pelo sistema central e distribuído mensalmente entre os usuários.
+
+Vantagens:
+
+- Baixo custo de implementação.
+
+Desvantagens:
+
+- Menor precisão.
+
+**Modelo 3 - Cobrança Automatizada (Recomendado)**
+
+Através da integração entre:
+
+- Carregador GoodWe HCA G2;
+- Plataforma SEMS+;
+- Sistema goodwe-energy-monitor;
+- Banco de dados interno.
+
+A cobrança ocorre automaticamente conforme o consumo registrado. O próprio HCA G2 foi projetado para fornecer transparência na divisão de custos e reembolsos entre usuários.
+
+## 2.3 Normas para Condomínios
+
+A instalação de carregadores em condomínios deve observar:
+
+**Normas da ABNT**
+
+- ABNT NBR 5410 (Instalações elétricas de baixa tensão);
+- ABNT NBR IEC 61851 (Sistemas de carregamento de veículos elétricos);
+- ABNT NBR 17019 (Infraestrutura de recarga).
+
+Além disso:
+
+- A instalação deve ser aprovada pelo condomínio;
+- O projeto elétrico deve ser elaborado por profissional habilitado;
+- A infraestrutura deve possuir proteção contra sobrecorrente e surtos;
+- Recomenda-se um sistema de gerenciamento de carga para evitar sobrecargas.
+
+Também é importante verificar a capacidade do transformador e do quadro geral antes da expansão da infraestrutura.
+
+Discussões recentes entre usuários e especialistas apontam que a principal dificuldade dos condomínios não é a instalação de um único carregador, mas a escalabilidade quando vários moradores passam a utilizá-los simultaneamente.
+
+## 3. Funcionamento Técnico do GoodWe HCA G2
+
+O carregador GoodWe HCA G2 é um carregador inteligente em corrente alternada (AC), disponível nas seguintes versões:
+
+| Modelo       | Potência |
+| ------------ | -------- |
+| GW7K-HCA-20  | 7 kW     |
+| GW11K-HCA-20 | 11 kW    |
+| GW22K-HCA-20 | 22 kW    |
+
+
+**Principais características**
+
+**Integração fotovoltaica**
+
+Permite utilizar a energia produzida pelos painéis solares para recarregar veículos elétricos.
+
+**Balanceamento dinâmico de carga**
+
+Monitora o consumo da residência ou condomínio e ajusta automaticamente a potência de recarga, evitando sobrecargas elétricas.
+
+**Controle remoto**
+
+Realizado pela plataforma SEMS+.
+
+Permite:
+
+- Monitoramento em tempo real;
+- Programação de horários;
+- Relatórios de consumo;
+- Gestão energética integrada.
+
+**Modos de autenticação**
+
+Suporta múltiplos métodos de autenticação, incluindo RFID, possibilitando o controle individual de usuários e a divisão transparente dos custos.
+
+**Proteção ambiental**
+
+- Grau de proteção IP66;
+- Instalação interna ou externa.
+
+## 4. Análise Comparativa das Interfaces de Comunicação
+
+Critérios avaliados:
+
+- Custo;
+- Consumo energético;
+- Tempo de resposta;
+- Facilidade de implementação;
+- Escalabilidade.
+
+**Tabela Comparativa**
+| Interface | Custo       | Consumo Energético | Velocidade  | Distância  | Viabilidade  |
+| --------- | ----------- | ------------------ | ----------- | ---------- | ------------ |
+| Wi-Fi     | Baixo       | Médio              | Alta        | 30 a 50 m  | Muito alta   |
+| LAN       | Médio       | Baixo              | Muito alta  | Até 100 m  | Excelente    |
+| Bluetooth | Muito baixo | Muito baixo        | Média       | Até 10 m   | Baixa        |
+| RFID      | Baixo       | Muito baixo        | Instantânea | Até 10 cm  | Complementar |
+| RS-485    | Baixo       | Muito baixo        | Alta        | Até 1200 m | Excelente    |
+
+## 5. Interface Mais Viável
+
+**Solução Recomendada: RS-485 + LAN + RFID**
+
+**RS-485 (Principal)**
+
+Justificativa:
+
+- Muito baixo consumo energético;
+- Alta confiabilidade;
+- Excelente imunidade a interferências;
+- Grande alcance;
+- Baixo custo de implantação.
+
+Ideal para comunicação entre carregadores e o sistema central.
+
+**LAN (Monitoramento)**
+
+Justificativa:
+
+- Alta velocidade;
+- Estabilidade superior ao Wi-Fi;
+- Segurança elevada;
+- Menor latência.
+
+Ideal para envio dos dados ao servidor do condomínio.
+
+**RFID (Controle de Usuários)**
+
+Justificativa:
+
+- Permite identificar cada morador;
+- Facilita a cobrança individual;
+- Baixo custo operacional.
+
+**Interfaces Menos Indicadas**
+
+**Wi-Fi**
+
+Vantagens:
+
+- Fácil instalação.
+
+Desvantagens:
+
+- Sofre interferências;
+- Consome mais energia;
+- Menor estabilidade em estacionamentos subterrâneos.
+
+**Bluetooth**
+
+Vantagens:
+
+- Baixíssimo consumo.
+
+Desvantagens:
+
+- Alcance reduzido;
+- Não é adequado para monitoramento contínuo.
+
+## 6. Arquitetura Proposta
+Morador
+
+   ↓
+   
+RFID
+
+   ↓
+   
+Carregador GoodWe HCA G2
+
+   ↓
+   
+RS-485
+
+   ↓
+   
+Servidor local (goodwe-energy-monitor)
+
+   ↓
+   
+LAN
+
+   ↓
+   
+Dashboard Web
+
+   ↓
+   
+SEMS+
+
+O sistema realiza:
+
+**1.**
+Identificação do usuário via RFID;
+
+**2.**
+Registro do início da recarga;
+
+**3.**
+Monitoramento contínuo do consumo;
+
+**4.**
+Cálculo automático dos custos;
+
+**5.**
+Geração de relatórios mensais.
+
+## 7. Conclusão
+
+A implementação da solução é legalmente viável e tecnicamente recomendada.
+
+A integração entre o projeto goodwe-energy-monitor e os carregadores GoodWe HCA G2 oferece uma infraestrutura moderna para condomínios, permitindo:
+
+- Transparência na cobrança dos moradores;
+- Redução de conflitos administrativos;
+- Otimização do consumo energético;
+- Integração com sistemas fotovoltaicos;
+- Escalabilidade para futuras expansões.
+
+A combinação RS-485 + LAN + RFID apresenta a melhor relação entre custo, consumo energético, velocidade e confiabilidade, tornando-se a arquitetura mais adequada para ambientes condominiais de médio e grande porte.
+
+<div align="center">
   <h1>Arquitetura e Base de Dados</h1>
 </div>
 
