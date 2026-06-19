@@ -1,4 +1,21 @@
 <div align="center">
+  <h1>Goodwe Energy Monitor
+</h1>
+</div>
+
+## Integrantes da Equipe
+
+Diego Ramos dos Santos -	RM 570889
+
+Eduardo Ventura Rocha Soares - RM 570795
+
+Heitor Assis Duenhas - RM 570472
+
+José Rodrigues da Silva Júnior - RM 572300
+
+Pedro Ribeiro Gesini - RM 469421
+
+<div align="center">
   <h1>Contexto do problema e pesquisa de dados</h1>
 </div>
 
