@@ -627,6 +627,8 @@ Os consumos são somados na mesma fatura
 
 ## 4 Esquema da Base de Dados
 
+![Gráfico de Evolução da Frota ](assets/diagrama_arquitetura.png)
+
 <div align="center">
   <h1>Fontes e Referências</h1>
 </div>
