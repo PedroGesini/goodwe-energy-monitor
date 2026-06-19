@@ -135,6 +135,98 @@ organização, responsabilidade técnica e diálogo entre os residentes antes de
 fato realizar a sua implementação nos condomínios.
 
 <div align="center">
+  <h1>Pesquisa de mercado e análise de concorrentes</h1>
+</div>
+
+## 1. Chargepoint
+
+### 1.1 Problema resolvido
+A empresa analisada atua no desafio de propiciar aos condôminos um ambiente sustentável com a presença de veículos eletrificados, de modo que resolvam impasses como:
+* Discussões acerca da baixa oferta de carregamentos veiculares em relação a alta demanda dos condôminos para usar tal tecnologia;
+* Aumento da conta de luz sem um destinatário específico, causando revolta geral em todos os moradores em relação a alta;
+*	Alta concentração de postos de carregamento sendo usados ao mesmo tempo, podendo gerar quedas gerais em prédios residenciais.
+
+### 1.2 Principais funcionalidades
+Para tais adversidades, a solução proposta pela Chargepoint se destaca pela união de recursos integrados de hardware e software, possibilitando:
+* Gestão de vários cenários (gestão de vagas comuns e vagas privativas);
+* Bilhetagem automatizada;
+* Balanceamento de carga (evita custos elevados com a rede elétrica);
+* Controle de acesso aos carregadores via nuvem;
+* Painel de controle (ChargePoint Cloud) responsável por gerenciar o carregamento dos veículos e fornecer relatórios sobre consumo de energia;
+* Processamento personalizado de pagamentos para residentes, hóspedes e carregamento pessoal.
+
+### 1.3 Modelo de negócio
+Em síntese, conseguimos deduzir que a Chargepoint gera renda com a produção de hardwares de carregamento, alinhados a softwares responsáveis por resolver problemas acerca da organização dos condôminos em relação as vagas de estacionamento, altos gastos com a rede elétrica e uma cobrança personalizada para residentes e hóspedes. Além disso, boa parte do faturamento deles se deve a cobrança de uma assinatura constante do condomínio para a liberação do acesso ao painel na nuvem.
+
+### 1.4 Limitações da empresa
+Por meio de um fórum que apresenta avaliações da empresa analisada, coletamos os contextos que cercam as avaliações feitas pelos consumidores:
+* Vulnerabilidades graves de segurança: Muitos usuários relatam invasões as suas contas, problema esse que ocorreu por conta de um vazamento de dados, resultando em cobranças indevidas nos cartões de crédito dos clientes vinculados ao sistema. Além disso, a empresa demonstra ineficácia na resolução desses problemas e um grande descaso quando se trata do ressarcimento dos seus clientes afetados;
+
+* Sistema de cobrança problemático: Outro alvo de críticas dos clientes são os sistemas de recarga automática, pois caso o usuário gaste um valor, o sistema bloqueia e recarrega automaticamente o mesmo valor no cartão e, ao alterar o plano para pagar apenas o que consome, tende a levar no mínimo um mês para ser efetivado. Além disso, o usuário pode encontrar problemas ao tentar desvincular dados do cartão de crédito;
+
+* Atendimento precário ao cliente: E-mails enviados pelos clientes relatando problemas ou insatisfações sequer são lidos ou respondidos, também não há um canal telefônico eficiente e, segundo relatos de clientes, o atendimento parece ser terceirizado, com respostas automáticas que são ineficazes quando se trata da resolução das adversidades enfrentadas pelos clientes;
+
+* Falhas técnicas no bloqueio de saldo: Foram relatadas falhas técnicas graves em como o software lida com sistemas de pagamento. Os usuários relatam se sentirem lesados, pois o sistema realiza a cobrança do cartão de crédito mesmo quando os pontos de recarga apresentam defeitos técnicos e não entregam energia.
+
+A partir de uma análise minuciosa sobre todos esses pontos de vista debatidos, podemos chegar à conclusão de que a dependência excessiva de um ecossistema fechado pode gerar problemas sérios na área financeira e de suporte para os usuários da plataforma.
+
+## 2. Wallbox
+
+### 2.1 Problema resolvido
+A Wallbox é responsável por oferecer soluções no desafio de integrar infraestrutura elétrica em espaços de convivência compartilhados, como é o caso dos prédios residenciais. Os problemas que cercam esses fatores são a escassez de espaço nas garagens e riscos de sobrecarga da energia do prédio em caso de utilização simultânea dos pontos de carregamento. Um diferencial apresentado para resolver todas essas adversidades listadas e ao mesmo tempo evitar transtornos para todos os condôminos e preservando a “boa vizinhança” é a eliminação de grandes reformas no prédio, que só é possível através de carregadores compactos e que estejam integrados a um software de gerenciamento em tempo real. Em síntese, eles conseguem resolver ao mesmo tempo a dificuldade na gestão do síndico, pois automatizam o controle de acesso e, consequentemente, a divisão correta das despesas geradas pelos pontos de carregamento.
+
+### 2.2 Principais funcionalidades
+Dentre as tecnologias desenvolvidas pela Wallbox que desempenham papel crucial na resolução das adversidades anteriormente citadas, se destacam:
+* Software responsável pelo gerenciamento dos carregadores de veículos eletrificados contando com a Medição Certificada (MID), que garante precisão na contagem de energia gasta por cada usuário, permitindo relatórios exatos para reembolso e cobrança;
+
+* Serviço de carregamento que oferece maior gestão da energia para diferentes cenários (carregadores individuais e coletivos), com destaque para o Gerenciamento Dinâmico de Carga (Power Sharing), que distribui a energia automaticamente entre os veículos conectados, evitando sobrecargas de pico no prédio;
+
+* Carregadores diversificados com alta integração à condomínios, como o Pulsar Pro;
+
+* Serviços com equipes especializadas que auxiliam durante todo o projeto até a sua execução;
+
+* Linha de acessórios personalizada.
+
+### 2.3 Modelo de negócio
+O seu ganho de receita está situado na venda direta das suas estações físicas de carregamento, como o Pulsar Pro (possui tecnologia de medição e conectividade embarcada). Além disso, atuam em um modelo híbrido focado na venda direta de hardwares premium, que se complementa com o uso de softwares (Software as a Service – SaaS). No entanto, o seu faturamento de longo prazo se sustenta graças à assinatura que os condomínios pagam para desbloquear o painel na nuvem e, consequentemente, garantindo o acesso às funcionalidades descritas anteriormente.
+
+### 2.4 Limitações da empresa
+A partir da coleta de avaliações de clientes da empresa, podemos destacar as seguintes limitações:
+* Descaso no suporte técnico e pós-venda: Usuários descrevem a demora no atendimento e em alguns casos em que há resposta por parte da empresa, não é apresentada nenhuma solução prática. Além disso, não há nenhum número de telefone, fazendo com que a comunicação entre os clientes dependa exclusivamente de e-mails lentos;
+
+* Falhas críticas de software: O aplicativo é descrito pelos usuários como confuso e difícil de configurar, ocorrendo até mau funcionamento (e em outros casos desligamento total) logo após uma atualização automática de software;
+
+* Falhas no hardware com o passar do tempo: Casos frequentes apontam que a confiabilidade das peças internas a médio prazo é considerada questionável. Um de seus principais atrativos para condomínios, que é o balanceamento de carga, apresentou falhas de comunicação com o tempo, o que reduziu drasticamente a eficiência da recarga sem aviso prévio.
+
+## 3. Zaptec
+
+### 3.1 Problema resolvido
+A Zaptec foca em uma dor estrutural para a adoção de veículos eletrificados em condomínios: A limitação da infraestrutura elétrica já existente. Ou seja, a empresa analisada faz com que obras complexas e de alto custo, muito pela necessidade da troca de transformadores ou refazer todo o cabeamento do subsolo, sejam evitadas. A solução apresentada foca na otimização da rede, garantindo que dezenas de veículos possam ser conectados simultaneamente, sem que haja quedas de energia ou o sobrecarregamento da capacidade original do quadro elétrico do edifício. 
+
+### 3.2 Principais funcionalidades
+O núcleo da tecnologia da Zaptec é o seu sistema patenteado de balanceamento dinâmico de carga e fase. Analisando de forma prática, podemos dizer que é um software em nuvem que monitora o consumo do prédio em tempo real e distribui a energia desperdiçada entre os carros. O sistema é inteligente o suficiente para alternar fisicamente as conexões entre o modo monofásico e trifásico, nivelando a distribuição de energia para que os carregadores atinjam até 22 kW de potência máxima sem desarmar os disjuntores.
+Outro grande diferencial referente à praticidade na instalação em condomínios é a modularidade da instalação através da "placa traseira". Dessa forma, o condomínio pode preparar toda a infraestrutura da garagem de uma vez instalando apenas essa base nas vagas. Quando um morador adquire um veículo, basta comprar o corpo principal do carregador (Zaptec Pro) e encaixá-lo na placa, permitindo que o sistema cresça no ritmo da demanda sem novas intervenções elétricas.
+Para fechar o pacote técnico, os aparelhos possuem conectividade independente (com rede 4G LTE-M própria e Wi-Fi), resolvendo a falta de sinal de internet em garagens subterrâneas. Eles também possuem medidores integrados com certificação europeia (MID), trazendo uma verificação de consumo com precisão legal e evitando disputas entre moradores.
+
+### 3.3 Modelo de negócio
+A receita da empresa provém principalmente da venda do hardware premium (totens, placas e acessórios). Como estratégia para atrair condomínios, eles oferecem o software de gestão "Portal Zaptec" de forma gratuita.
+Nesse modelo, a Zaptec não atua como uma operadora financeira. O portal funciona como um grande painel de auditoria que fica encarregado de analisar quem carregou (via autenticação no app) e quantos quilowatts-hora foram gastos. Fica sob responsabilidade da administração do condomínio exportar esses relatórios para adicionar o valor na taxa condominial, ou utilizar a API aberta da Zaptec para conectar o sistema a um gateway de pagamento terceirizado que faça a cobrança automática.
+
+### 3.4 Limitações da empresa
+O ponto mais crítico da operação da Zaptec é o pós-venda e o suporte ao usuário final, área que acumula fortes reclamações. A principal problemática da empresa é a adoção de uma política de distanciamento do consumidor, escondendo telefones de contato e forçando o atendimento inicial por meio de uma assistente virtual que possui respostas limitadas e frequentemente bloqueia o avanço para um atendente humano.
+O foco da empresa é atender apenas os instaladores parceiros. Com isso, há diversos relatos de usuários que ficam com o equipamento inoperante por dias devido a erros de sistema, recebendo apenas e-mails automatizados ou tendo o problema terceirizado para supostas falhas na rede da concessionária local. Além disso, a marca se recusa a fornecer suporte técnico caso o equipamento tenha sido comprado por canais não oficiais, demonstrando uma grande rigidez e falta de empatia na resolução de problemas do cliente final.
+
+### Análise Competitiva de Mercado
+
+| Critério (Lógica Canvas) | Zaptec | Wallbox | ChargePoint |
+| :--- | :--- | :--- | :--- |
+| **Segmentos de Clientes** | Condomínios com limitação na infraestrutura elétrica. | Prédios residenciais com escassez de espaço nas garagens. | Condôminos com alta demanda e necessidade de gestão de vagas comuns/privativas. |
+| **Proposta de Valor** | Evitar obras complexas e otimizar a rede elétrica. | Carregadores compactos que evitam grandes reformas e facilitam a gestão do síndico. | União de hardware e software para bilhetagem automatizada e controle em nuvem. |
+| **Fontes de Receita** | Venda de hardware premium (totens e placas) com portal gratuito. | Venda direta de equipamentos e assinatura de software (SaaS). | Produção de hardware e cobrança de assinatura constante para liberação do painel. |
+| **Principais Funcionalidades** | Balanceamento dinâmico de fase, placa traseira modular, 4G nativo e medidor MID. | Medição Certificada (MID) e Gerenciamento Dinâmico de Carga (Power Sharing). | ChargePoint Cloud, controle de acesso e processamento personalizado de pagamentos. |
+| **Limitações / Brechas** | Pós-venda inacessível ao cliente final e recusa de suporte para compras não oficiais. | Descaso no suporte técnico, falhas críticas de software/app e desgaste do hardware. | Vazamento de dados, falhas no bloqueio de saldo e atendimento terceirizado ineficaz. |
+
+<div align="center">
   <h1>Arquitetura e Base de Dados</h1>
 </div>
 
@@ -213,3 +305,17 @@ A camada de aplicação representa o núcleo de processamento dos dados gerados 
 - **IstoÉ Dinheiro:** [Censo mostra que 84,8% dos brasileiros moram em casas e 12,5% em apartamentos](https://istoedinheiro.com.br/censo-mostra-que-848-dos-brasileiros-moram-em-casas-e-125-em-apartamentos)
 
 - **IBGE:** [Características dos Domicílios – Censo 2022](https://educa.ibge.gov.br/jovens/conheca-o-brasil/populacao/22064-caracteristicas-dos-domicilios-censo-2022.html)
+
+- **Wallbox:** [Pulsar Pro Home Charger Reimbursement](https://wallbox.com/en/pulsar-pro-home-charger-reimbursement)
+
+- **ChargePoint:** [EV Charging Solutions for Condos](https://www.chargepoint.com/solutions/condos)
+
+- **Trustpilot:** [Avaliações de Clientes - ChargePoint](https://www.trustpilot.com/review/chargepoint.com?page=2)
+
+- **Trustpilot:** [Avaliações de Clientes - Wallbox](https://www.trustpilot.com/review/wallbox.com)
+
+- **Wallbox:** [EV Charging for Condominiums](https://wallbox.com/en/ev-charging-condominiums)
+
+- **Zaptec:** [Zaptec Pro - Business and Commercial Charging Solutions](https://www.zaptec.com/charging-solutions/business-and-commercial/zaptec-pro)
+
+- **Trustpilot:** [Avaliações de Clientes - Zaptec](https://www.trustpilot.com/review/zaptec.com)
