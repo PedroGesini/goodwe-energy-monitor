@@ -135,6 +135,70 @@ organização, responsabilidade técnica e diálogo entre os residentes antes de
 fato realizar a sua implementação nos condomínios.
 
 <div align="center">
+  <h1>Arquitetura e Base de Dados</h1>
+</div>
+
+## 1 Arquitetura da plataforma EV ChargeOps
+
+### 1.1 Camada Física
+A camada física é composta pelos componentes responsáveis pela geração e coleta de dados.
+
+**1.1.1 Componentes**
+* Carregador GoodWe HCA G2;
+* Veículos eletricos;
+* Sistema de autenticação RFID;
+* Sensores e medidores de energia integrados ao carregador;
+
+**1.1.2 Responsabilidades**
+* Realizar tranferência de energia ao veículo;
+* Receber energia do carregador;
+* Identificar usuários autorizados;
+* Registrar início e terminos de seções;
+* Medir energia consumida;
+
+**1.1.3 Dados Gerados**  
+* Data/Hora: Momento da recarga;
+* Usuário: Responsável pela sessão;
+* Energia consumida: Quantidade em kWh;
+* Potência: Potência instantanea;
+* Duração: Tempo da sessão;
+* Status:Em andamento, concçuída ou interrompida;
+
+### 1.2 Camada de Conectividade
+Esta camada é responsável pela comunicação entre o carregador e a plataforma.
+
+**1.2.1 Interfaces Disponíveis**
+* Wi-Fi: Permite a comunicação remota com intenet para envio de dados ao sistema;
+* LAN: Oferece conexão estável para condomínios;
+* Bluetooth: Utilizado para configuração local e manutenção;
+* RFID: Identificação rápida de usuários autorizados;
+* RS-485: Protocolo industrial para integração com outros dispositivos de automação;
+
+**1.2.2 Responsabilidades**
+* Transmitir dados para a nuvem;
+* Garantir sincronização dos registros;
+* Possibilitar monitoramento remoto;
+* Integrar o carregador à plataforma;
+
+### 1.3 Camada de Aplicação
+A camada de aplicação representa o núcleo de processamento dos dados gerados e coletados.
+
+**1.3.1 Componentes**
+* API Back-end;
+* Banco de Dados;
+* Motor de Rateio;
+* Sistema de faturamento;
+* Inteligência artificial;
+
+**1.3.2 Responsabilidade**
+* Receber os dados da API GoodWe;
+* Processar sessões de recarga;
+* Armazenar informações históricas;
+* Calcular cobranças;
+* Gerar relatórios;
+* Alimentar algorítimos de IA;
+
+<div align="center">
   <h1>Fontes e Referências</h1>
 </div>
 
