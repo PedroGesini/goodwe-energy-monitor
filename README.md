@@ -218,7 +218,7 @@ O foco da empresa é atender apenas os instaladores parceiros. Com isso, há div
 
 ### Análise Competitiva de Mercado
 
-| Critério (Lógica Canvas) | Zaptec | Wallbox | ChargePoint |
+| Critérios  | Zaptec | Wallbox | ChargePoint |
 | :--- | :--- | :--- | :--- |
 | **Segmentos de Clientes** | Condomínios com limitação na infraestrutura elétrica. | Prédios residenciais com escassez de espaço nas garagens. | Condôminos com alta demanda e necessidade de gestão de vagas comuns/privativas. |
 | **Proposta de Valor** | Evitar obras complexas e otimizar a rede elétrica. | Carregadores compactos que evitam grandes reformas e facilitam a gestão do síndico. | União de hardware e software para bilhetagem automatizada e controle em nuvem. |
