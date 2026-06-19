@@ -569,6 +569,64 @@ A camada de aplicação representa o núcleo de processamento dos dados gerados 
 * Gerar relatórios;
 * Alimentar algorítimos de IA;
 
+### 1.4 Camada de Apresentação
+É a camada que chega aos usuários finais.
+
+**1.4.1 Portal do Morador**  
+Funcionalidades:
+* Consultar histórico de recargas;
+* Visualizar consumo;
+* acompanhar faturas;
+* Receber notificações;
+
+**1.4.2 Portal do Gestor**  
+Funcionalidades:
+* Monitorar carregadores;
+* Gerenciar usuários;
+* Configurar tarifas;
+* Acompanhar indicadores;
+
+## 2 Fluxo de dados da plataforma
+
+### 2.1 Etapas
+- Autenticação: O usuário aproxima o cartão RFID do carregador.  O sistema registra o ID do usuário, a data e o horário;
+- Início da recarga: O carregardo transfere energia para o veículo. O sistema registra a potência inicial e o identificador da sessão;
+- Coleta de dados: Durante a recarga são coletados a energia consumida, potência, tempo de utilização e eventos operacionais;
+- Envio para a API GoodWe: Os dados são enviados para o portal SEMS da GoodWe;
+- Processamento no EV ChargOps: A plataforma recebe os dados e valida a sessão, relaciona o usuário à unidade, calcula o consumo e atualiza histórico;
+- Rateio e faturamento: O sistma aplica as regras de cobrança resultando em valor devido, consumo mensal, relatórios financeiros;
+- Inteligência artificial: Os dados históricos alimentam os modelos analíticos. A ia Fará previsões, alertas e recomendações;
+
+### 2.2 Fluxograma
+
+## 3 Modelo de Rateio
+
+### 3.1 Variáveis
+* Energia consumida: kWh utilizados;
+* Tarifa: valor po kWh;
+
+### 3.2 Fórmula
+valor da sessão = energia consumida x tarifa
+
+**Exemplo:**  
+energiaConsumida = 32
+tarifa = 0.9
+
+valorDaSessao = 28.80
+
+### 3.3 Casos Excepcionais
+
+**Sessão interrompida**  
+Cobrança proporcional ao consumo registrado
+
+**Usuário sem recarga no mês**  
+Fatura zerada
+
+**Dois veículos na mesma unidade**  
+Os consumos são somados na mesma fatura
+
+## 4 Esquema da Base de Dados
+
 <div align="center">
   <h1>Fontes e Referências</h1>
 </div>
