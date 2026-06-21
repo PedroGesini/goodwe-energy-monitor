@@ -599,6 +599,8 @@ Funcionalidades:
 
 ### 2.2 Fluxograma
 
+![Diagrama de classes ](assets/fluxograma_arquitetura.png)
+
 ## 3 Modelo de Rateio
 
 ### 3.1 Variáveis
@@ -627,7 +629,7 @@ Os consumos são somados na mesma fatura
 
 ## 4 Esquema da Base de Dados
 
-![Gráfico de Evolução da Frota ](assets/diagrama_arquitetura.png)
+![Diagrama de classes ](assets/diagrama_arquitetura.png)
 
 <div align="center">
   <h1>Fontes e Referências</h1>
