@@ -422,6 +422,56 @@ Os consumos são somados na mesma fatura
 
 ![Diagrama de classes ](assets/diagrama_arquitetura.png)
 
+### Unidade
+| idUnidade | bloco | numero | tipo        |
+| --------- | ----- | ------ | ----------- |
+| 1         | A     | 101    | Apartamento |
+| 2         | A     | 102    | Apartamento |
+| 3         | B     | 201    | Apartamento |
+
+### Usuário
+| idUsuario | nome            | email                                       | telefone    | status  | idUnidade |
+| --------- | --------------- | ------------------------------------------- | ----------- | ------- | --------- |
+| 1         | João Silva      | [joao@email.com](mailto:joao@email.com)     | 11999990001 | Ativo   | 1         |
+| 2         | Maria Souza     | [maria@email.com](mailto:maria@email.com)   | 11999990002 | Ativo   | 1         |
+| 3         | Carlos Oliveira | [carlos@email.com](mailto:carlos@email.com) | 11999990003 | Ativo   | 2         |
+| 4         | Ana Costa       | [ana@email.com](mailto:ana@email.com)       | 11999990004 | Inativo | 3         |
+
+### Veículo
+| idVeiculo | placa   | modelo       | fabricante | idUsuario |
+| --------- | ------- | ------------ | ---------- | --------- |
+| 1         | ABC1D23 | Dolphin Mini | BYD        | 1         |
+| 2         | DEF4G56 | Dolphin Plus | BYD        | 2         |
+| 3         | HIJ7K89 | Model 3      | Tesla      | 3         |
+| 4         | LMN0P12 | Ora 03       | GWM        | 4         |
+
+### Carregador
+| idCarregador | modelo        | localizacao     | status      |
+| ------------ | ------------- | --------------- | ----------- |
+| 1            | GoodWe HCA G2 | Garagem Bloco A | Disponível  |
+| 2            | GoodWe HCA G2 | Garagem Bloco B | Em Operação |
+
+### Tarifa
+| idTarifa | valorKwh | dataInicio | dataFim    |
+| -------- | -------- | ---------- | ---------- |
+| 1        | 0,90     | 01/01/2026 | 30/06/2026 |
+| 2        | 1,05     | 01/07/2026 | 31/12/2026 |
+
+### Sessão de Recarga
+| idSessao | inicio           | fim              | energiaKwh | duracaoMin | custo | status       | idUsuario | idVeiculo | idCarregador | idTarifa |
+| -------- | ---------------- | ---------------- | ---------- | ---------- | ----- | ------------ | --------- | --------- | ------------ | -------- |
+| 1        | 15/06/2026 18:00 | 15/06/2026 21:00 | 32,0       | 180        | 28,80 | Concluída    | 1         | 1         | 1            | 1        |
+| 2        | 16/06/2026 19:30 | 16/06/2026 22:00 | 24,5       | 150        | 22,05 | Concluída    | 2         | 2         | 1            | 1        |
+| 3        | 17/06/2026 20:00 | 17/06/2026 23:20 | 38,0       | 200        | 34,20 | Concluída    | 3         | 3         | 2            | 1        |
+| 4        | 18/06/2026 22:15 | 18/06/2026 23:45 | 15,0       | 90         | 13,50 | Interrompida | 1         | 1         | 1            | 1        |
+
+### Fatura
+| idFatura | competencia | valorTotal | dataEmissao | statusPagamento | idUnidade |
+| -------- | ----------- | ---------- | ----------- | --------------- | --------- |
+| 1        | Junho/2026  | 64,35      | 30/06/2026  | Pendente        | 1         |
+| 2        | Junho/2026  | 34,20      | 30/06/2026  | Pago            | 2         |
+| 3        | Junho/2026  | 0,00       | 30/06/2026  | Não Gerada      | 3         |
+
 # EV ChargeOps - Papel da Inteligência Artificial na Plataforma
 
 ## 1. Introdução
