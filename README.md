@@ -631,6 +631,115 @@ Os consumos são somados na mesma fatura
 
 ![Diagrama de classes ](assets/diagrama_arquitetura.png)
 
+# EV ChargeOps - Papel da Inteligência Artificial na Plataforma
+
+## 1. Introdução
+Este documento corresponde à Frente 3 do desafio EV ChargeOps, na opção de aprofundamento B, que solicita a definição do papel da Inteligência Artificial dentro da plataforma. O enunciado pede ao menos duas abordagens de IA aplicáveis ao problema, com indicação da técnica envolvida, dos dados necessários e do impacto esperado de cada uma. Foram selecionadas três abordagens, por se entender que o problema de gestão de recarga compartilhada apresenta pelo menos três momentos distintos de decisão, cada um exigindo uma técnica diferente.
+
+A análise apresentada baseia-se em pesquisa bibliográfica sobre as técnicas e em documentação pública do equipamento envolvido (carregador GoodWe HCA G2), não havendo, até o momento, acesso a dados reais de uso do equipamento instalado no Energy Innovation Lab da FIAP.
+
+As três abordagens tratadas são: clustering de perfis de uso, detecção de anomalias e previsão de consumo. As três operam sobre os mesmos dados básicos de sessão de recarga (duração, energia entregue e horário), mas cada uma responde a uma pergunta distinta sobre esses dados.
+
+| Abordagem | Pergunta que busca responder |
+| :--- | :--- |
+| Clustering de perfis de uso | Que tipo de usuário é esse? |
+| Detecção de anomalias | Essa sessão é normal ou apresenta indício de problema? |
+| Previsão de consumo | Quanto será consumido no próximo período? |
+
+Tabela 1 - Abordagens de IA selecionadas.
+
+## 2. Posição da IA no fluxo de dados
+Antes de detalhar cada abordagem, situa-se a camada de IA dentro da arquitetura geral da plataforma. O diagrama a seguir segue a divisão em camadas proposta no desafio (física, conectividade, aplicação e apresentação), posicionando a IA entre a camada de aplicação e a camada de apresentação, uma vez que ela depende dos dados já processados pelo banco de dados e pelo motor de regras de rateio, e devolve resultados tanto para esse motor quanto para as interfaces do usuário e do gestor.
+
+*(Inserir Figura 1 - Fluxo de dados até a IA (esquema simplificado) aqui)*
+
+Figura 1-Arquitetura em camadas e posição da IA no fluxo de dados.
+
+Trata-se de uma primeira versão do esquema, sujeita a ajustes na Sprint 02 conforme a integração entre a camada de IA e o motor de rateio for detalhada com mais precisão.
+
+## 3. Clustering de perfis de uso
+Esta é a abordagem definida como principal, a ser priorizada caso o grupo opte por implementar IA de fato na Sprint 02.
+
+**Problema que pretende resolver**
+Em um condomínio ou campus com carregador compartilhado, os usuários não utilizam o equipamento da mesma forma. Há perfis de uso quase diário, perfis de uso esporádico e perfis concentrados em determinados horários. Tratar todos os usuários de modo uniforme no rateio e na comunicação não reflete o uso real de cada um. O clustering tem como função agrupar os usuários por padrão de uso sem que seja necessário definir essas categorias manualmente.
+
+**Técnica**
+Trata-se de uma técnica de aprendizado não supervisionado. O algoritmo K-Means é indicado como ponto de partida, por ser de implementação e interpretação mais simples. O DBSCAN é apontado na literatura como alternativa para os casos em que os grupos não apresentam separação bem definida. A proposta para a Sprint 02 é iniciar pelo K-Means, considerando o DBSCAN apenas se o resultado inicial não se mostrar satisfatório.
+
+**Dados necessários**
+* Duração média das sessões de cada usuário.
+* Energia entregue por sessão e por mês.
+* Horário predominante de uso.
+* Frequência semanal ou mensal de utilização do carregador.
+
+**Impacto esperado**
+Espera-se que o resultado do clustering possa ser utilizado tanto no modelo de rateio, aplicando critérios diferenciados por perfil, quanto na comunicação com o usuário, personalizando mensagens conforme o padrão de uso identificado. Por não haver ainda dados reais suficientes, trata-se de uma expectativa fundamentada na pesquisa realizada, e não de um resultado validado.
+
+## 4. Detecção de anomalias
+A segunda abordagem trata de situações em que algo na sessão de recarga sai do padrão esperado, e que um sistema sem verificação automática não seria capaz de identificar a tempo.
+
+**Problema que pretende resolver**
+Sessões de recarga podem apresentar falhas que não são evidentes apenas observando os dados brutos: uma sessão pode não ser encerrada corretamente, um sensor pode reportar um valor de energia inconsistente, ou um padrão de uso pode mudar de forma abrupta, como no caso de dois veículos sendo carregados sob o mesmo cadastro.Sem verificação automática, essas situações tendem a ser percebidas apenas quando o morador questiona a fatura, o que já representa um problema consolidado.
+
+**Técnica**
+A técnica considerada é o Isolation Forest, frequentemente citada na literatura para detecção de anomalias multivariadas, por conseguir tratar diversas variáveis simultaneamente. Como alternativa mais simples para uma primeira validação, considera-se também o cálculo de desvio em relação à média histórica de cada usuário (z-score), de implementação e interpretação mais diretas, ainda que menos sofisticado.
+
+**Dados necessários**
+* Duração e energia da sessão, comparadas ao histórico do mesmo usuário.
+* Potência reportada durante a sessão, quando disponibilizada pela API.
+* Registro de sessões não encerradas normalmente.
+
+**Impacto esperado**
+Sessões classificadas como fora do padrão não devem ser incorporadas automaticamente ao cálculo do rateio, mas sinalizadas para revisão do gestor. Essa verificação deve funcionar como alerta, e não como bloqueio automático, de modo a evitar que um uso legítimo, porém atípico, seja tratado como erro sem revisão humana.
+
+## 5. Previsão de consumo
+A terceira abordagem é considerada a mais incerta das três, por depender de um histórico de dados que ainda não está disponível.
+
+**Problema que pretende resolver**
+Gestores de condomínios e campus precisam de planejamento financeiro, e o consumo associado à recarga de veículos elétricos tende a crescer ao longo do tempo. Sem uma estimativa, o aumento do consumo só é percebido quando a fatura de energia já refletir essa mudança.
+
+**Técnica**
+A técnica considerada é a regressão, partindo de um modelo de regressão linear simples, com variáveis como número de veículos cadastrados e indicadores de sazonalidade (mês, dia da semana). Modelos mais complexos de série temporal não foram aprofundados nesta fase, por não se justificarem diante do volume de dados disponível, proveniente de um único carregador.
+
+**Dados necessários**
+* Histórico de consumo mensal, ainda inexistente em dados reais.
+* Número de veículos cadastrados ativos.
+* Indicadores de sazonalidade (mês, período de aula, entre outros).
+
+**Impacto esperado**
+Caso seja implementada, a previsão de consumo permitiria ao gestor antecipar aumentos no consumo de energia. Trata-se, no entanto, da abordagem mais frágil das três, por depender de dados que atualmente não existem, sendo por isso classificada como de menor prioridade, a ser implementada apenas se houver tempo disponível na Sprint 02.
+
+## 6. Comparação entre as abordagens
+A tabela a seguir resume os critérios que fundamentam a priorização do clustering como abordagem principal.
+
+| Critério | Clustering | Anomalias | Previsão |
+| :--- | :--- | :--- | :--- |
+| Tipo de aprendizado | Não supervisionado | Estatístico | Supervisionado |
+| Dependência de histórico extenso | Moderada | Baixa | Alta |
+| Complexidade de implementação | Baixa a média | Média | Baixa a média |
+| Prioridade na Sprint 02 | Alta | Média | Baixa |
+
+Tabela 2- Comparação entre as três abordagens.
+
+O clustering é priorizado por se conectar diretamente ao modelo de rateio, critério com maior peso na avaliação do desafio. A detecção de anomalias ocupa a segunda posição por proteger a qualidade dos dados que alimentam o próprio clustering e o rateio. A previsão de consumo é classificada como de menor prioridade pela baixa confiabilidade esperada, em razão do volume limitado de dados disponível no prazo da Sprint 02.
+
+## 7. Limitações identificadas
+A seguir são registradas as principais limitações da proposta, de modo a evidenciar leitura crítica sobre as escolhas técnicas apresentadas.
+
+* O Energy Innovation Lab da FIAP dispõe de apenas um carregador instalado, o que implica testar as três técnicas inicialmente com dados simulados, já que dados reais em volume suficiente ainda não existem.
+* Não há experiência prévia de implementação das três técnicas por parte do integrante responsável por esta frente, o que pode resultar em ajustes de abordagem durante a Sprint 02.
+* A detecção de anomalias apresenta risco de classificar uso legítimo, porém atípico, como erro. Por esse motivo, define-se que o resultado deve gerar alerta para revisão humana, e não ação automática.
+* A previsão de consumo é a abordagem mais frágil das três em razão da falta de histórico, sendo a primeira a ser descartada caso o tempo disponível na Sprint 02 seja insuficiente.
+
+## 8. Encaminhamentos para a Sprint 02
+A sequência proposta para o desenvolvimento desta frente na próxima sprint é a seguinte:
+
+* Geração de uma base de dados simulada de sessões de recarga, em articulação com a Frente 3, Opção C.
+* Organização dos dados em variáveis por usuário (duração média, energia, horário, frequência).
+* Implementação do clustering, com avaliação da consistência dos grupos obtidos.
+* Implementação da detecção de anomalias sobre a mesma base de dados.
+* Implementação da previsão de consumo, condicionada à disponibilidade de tempo.
+
 <div align="center">
   <h1>Fontes e Referências</h1>
 </div>
@@ -660,3 +769,13 @@ Os consumos são somados na mesma fatura
 - **Zaptec:** [Zaptec Pro - Business and Commercial Charging Solutions](https://www.zaptec.com/charging-solutions/business-and-commercial/zaptec-pro)
 
 - **Trustpilot:** [Avaliações de Clientes - Zaptec](https://www.trustpilot.com/review/zaptec.com)
+
+- **GoodWe:** [SEMS Portal](https://semsplus.goodwe.com/)
+
+- **Scikit-Learn:** [Clustering](https://scikit-learn.org/stable/modules/clustering.html)
+
+- **Scikit-Learn:** [Outlier and novelty detection](https://scikit-learn.org/stable/modules/outlier_detection.html)
+
+- **Scikit-Learn:** [Linear models](https://scikit-learn.org/stable/modules/linear_model.html)
+
+- **Agência Nacional de Energia Elétrica (ANEEL):** [Resolução Normativa nº 1.000/2021](https://www.aneel.gov.br/)
