@@ -651,7 +651,7 @@ Tabela 1 - Abordagens de IA selecionadas.
 ## 2. Posição da IA no fluxo de dados
 Antes de detalhar cada abordagem, situa-se a camada de IA dentro da arquitetura geral da plataforma. O diagrama a seguir segue a divisão em camadas proposta no desafio (física, conectividade, aplicação e apresentação), posicionando a IA entre a camada de aplicação e a camada de apresentação, uma vez que ela depende dos dados já processados pelo banco de dados e pelo motor de regras de rateio, e devolve resultados tanto para esse motor quanto para as interfaces do usuário e do gestor.
 
-*(Inserir Figura 1 - Fluxo de dados até a IA (esquema simplificado) aqui)*
+![Figura 1 - Fluxo de dados da IA](assets/fluxo_ia.png)
 
 Figura 1-Arquitetura em camadas e posição da IA no fluxo de dados.
 
