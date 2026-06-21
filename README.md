@@ -542,19 +542,19 @@ Além da modelagem algorítmica iniciada na Sprint 01, a Sprint 02 contemplará 
 O desenvolvimento seguirá uma abordagem ágil, organizada nas seguintes etapas:
 
 * **Etapa 1: Estruturação do Banco de Dados e Back-end**
-  * Criação do esquema do banco de dados relacional e desenvolvimento da API central para autenticação e rotas principais.
+  - Criação do esquema do banco de dados relacional e desenvolvimento da API central para autenticação e rotas principais.
   
 * **Etapa 2: Integração com a API GoodWe e Motor de Rateio**
-  * Desenvolvimento dos scripts de extração de dados do SEMS Portal e implementação da lógica de cálculo de Consumo x Tarifa.
+  - Desenvolvimento dos scripts de extração de dados do SEMS Portal e implementação da lógica de cálculo de Consumo x Tarifa.
 
 * **Etapa 3: Implementação da Camada de IA**
-  * Construção do modelo de Clustering (K-Means) para perfis de uso e lógica de detecção de anomalias (Isolation Forest) integrada à API principal.
+  - Construção do modelo de Clustering (K-Means) para perfis de uso e lógica de detecção de anomalias (Isolation Forest) integrada à API principal.
 
 * **Etapa 4: Camada de Apresentação (Frontend)**
-  * Desenvolvimento das interfaces visuais do Portal do Gestor e Portal do Morador, com uso de bibliotecas de gráficos para exibição de indicadores.
+  - Desenvolvimento das interfaces visuais do Portal do Gestor e Portal do Morador, com uso de bibliotecas de gráficos para exibição de indicadores.
 
 * **Etapa 5: Validação, Testes e Pitch**
-  * Testes de integração, correção de bugs de performance e roteirização/gravação do vídeo pitch de 3 minutos para a avaliação presencial.
+  - Testes de integração, correção de bugs de performance e roteirização/gravação do vídeo pitch de 3 minutos para a avaliação presencial.
 
 <div align="center">
   <h1>Fontes e Referências</h1>
