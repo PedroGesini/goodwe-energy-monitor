@@ -741,6 +741,31 @@ A sequência proposta para o desenvolvimento desta frente na próxima sprint é 
 * Implementação da previsão de consumo, condicionada à disponibilidade de tempo.
 
 <div align="center">
+  <h1>Plano para a Sprint 02 (Desenvolvimento e Prototipação)</h1>
+</div>
+
+### 1. Visão Geral
+Além da modelagem algorítmica iniciada na Sprint 01, a Sprint 02 contemplará a construção completa do sistema. O back-end e o motor de rateio corporativo serão desenvolvidos em Python (utilizando o framework FastAPI), garantindo integração nativa com os modelos de Inteligência Artificial (Scikit-Learn) e alta performance na comunicação com a API da GoodWe. A camada de apresentação (Portal do Morador e Gestor) será construída em React, enquanto os dados transacionais de consumo e faturamento serão guardados em um banco de dados relacional PostgreSQL, assegurando a integridade financeira do rateio.
+
+### 2. Cronograma de Execução
+O desenvolvimento seguirá uma abordagem ágil, organizada nas seguintes etapas:
+
+* **Etapa 1: Estruturação do Banco de Dados e Back-end**
+  * Criação do esquema do banco de dados relacional e desenvolvimento da API central para autenticação e rotas principais.
+  
+* **Etapa 2: Integração com a API GoodWe e Motor de Rateio**
+  * Desenvolvimento dos scripts de extração de dados do SEMS Portal e implementação da lógica de cálculo de Consumo x Tarifa.
+
+* **Etapa 3: Implementação da Camada de IA**
+  * Construção do modelo de Clustering (K-Means) para perfis de uso e lógica de detecção de anomalias (Isolation Forest) integrada à API principal.
+
+* **Etapa 4: Camada de Apresentação (Frontend)**
+  * Desenvolvimento das interfaces visuais do Portal do Gestor e Portal do Morador, com uso de bibliotecas de gráficos para exibição de indicadores.
+
+* **Etapa 5: Validação, Testes e Pitch**
+  * Testes de integração, correção de bugs de performance e roteirização/gravação do vídeo pitch de 3 minutos para a avaliação presencial.
+
+<div align="center">
   <h1>Fontes e Referências</h1>
 </div>
 
