@@ -151,6 +151,22 @@ Mesmo com o avanço significativo da frota de veículos elétricos, são necess�
 organização, responsabilidade técnica e diálogo entre os residentes antes de
 fato realizar a sua implementação nos condomínios.
 
+## 4. Funcionamento Técnico da Sessão de Recarga
+Do ponto de vista técnico, uma sessão de recarga em infraestrutura compartilhada (como o GoodWe HCA G2) segue um fluxo rigoroso:
+1. **Conexão Física:** O usuário pluga o cabo no veículo. O carregador detecta a presença do carro através de uma resistência no pino de controle (CP - Control Pilot).
+2. **Handshake (Comunicação):** O carregador e o veículo "conversam" via protocolo PWM (Pulse Width Modulation) para negociar a corrente máxima que o carro pode absorver.
+3. **Autenticação:** Caso seja um ambiente compartilhado, o usuário deve se autenticar via RFID ou App. Sem essa liberação, a energia não flui.
+4. **Transferência de Energia:** Após o "ok" do sistema, o contator interno do carregador é fechado e a corrente alternada (AC) é transferida. Durante todo esse período, o carregador captura dados em tempo real: potência (kW), voltagem, corrente e energia total entregue (kWh).
+5. **Encerramento:** Ao atingir a carga desejada ou ser desconectado, a sessão é finalizada, os dados são enviados para o servidor (SEMS Portal) e a fatura é calculada.
+
+## 5. Modelos de Negócio para Recarga Compartilhada
+Existem diversos modelos aplicados no mercado para viabilizar o custo da energia:
+* **Recarga Gratuita:** Geralmente oferecida por estabelecimentos (shoppings/hotéis) como marketing para atrair clientes de alto poder aquisitivo.
+* **Cobrança por Tempo:** Focada em alta rotatividade. Cobra-se um valor fixo por hora, desencorajando o usuário a deixar o carro parado após carregar.
+* **Cobrança por kWh Consumido:** O modelo mais justo e recomendado para condomínios. O morador paga exatamente pelo volume de energia que "abasteceu" seu veículo.
+* **Assinatura Mensal (SaaS/Energy as a Service):** O condomínio paga uma mensalidade fixa para uma operadora que gerencia toda a infraestrutura, software e manutenção.
+* **Rateio Condominial:** O custo é dividido entre os usuários, podendo ser feito de forma simples (divisão por igual) ou inteligente (baseado no consumo individual registrado pelo sistema de bilhetagem).
+
 <div align="center">
   <h1>Pesquisa de mercado e análise de concorrentes</h1>
 </div>
