@@ -152,20 +152,17 @@ organização, responsabilidade técnica e diálogo entre os residentes antes de
 fato realizar a sua implementação nos condomínios.
 
 ## 4. Funcionamento Técnico da Sessão de Recarga
-Do ponto de vista técnico, uma sessão de recarga em infraestrutura compartilhada (como o GoodWe HCA G2) segue um fluxo rigoroso:
-1. **Conexão Física:** O usuário pluga o cabo no veículo. O carregador detecta a presença do carro através de uma resistência no pino de controle (CP - Control Pilot).
-2. **Handshake (Comunicação):** O carregador e o veículo "conversam" via protocolo PWM (Pulse Width Modulation) para negociar a corrente máxima que o carro pode absorver.
-3. **Autenticação:** Caso seja um ambiente compartilhado, o usuário deve se autenticar via RFID ou App. Sem essa liberação, a energia não flui.
-4. **Transferência de Energia:** Após o "ok" do sistema, o contator interno do carregador é fechado e a corrente alternada (AC) é transferida. Durante todo esse período, o carregador captura dados em tempo real: potência (kW), voltagem, corrente e energia total entregue (kWh).
-5. **Encerramento:** Ao atingir a carga desejada ou ser desconectado, a sessão é finalizada, os dados são enviados para o servidor (SEMS Portal) e a fatura é calculada.
+Do ponto de vista técnico, uma sessão de recarga em infraestrutura compartilhada exige um fluxo rigoroso, tanto no quesito da comunicação, quanto em segurança. Tomando como base o carregador GoodWe HCA G2 que utilizaremos no projeto, o processo se inicia no momento em que o usuário pluga o cabo no veículo. Através de uma resistência no pino de controle (Control Pilot), o equipamento consegue detectar a conexão física e dá início ao chamado handshake. Nessa etapa preliminar, o carro e o carregador trocam dados via protocolo PWM (Pulse Width Modulation) para negociar a corrente máxima segura que a bateria pode absorver.
+
+Como estamos lidando com o contexto de um ambiente compartilhado, a energia não flui imediatamente, pois o usuário precisa passar por uma etapa de autenticação (via cartão RFID ou aplicativo). Apenas após essa validação do perfil, o contator interno do carregador é fechado e a transferência de energia em corrente alternada (AC) começa. Durante todo esse período ativo, a máquina atua como um coletor de telemetria, capturando em tempo real a potência instantânea (kW), a voltagem, a corrente e, o mais importante para o nosso escopo, a energia total entregue (kWh). Ao final, seja por atingir a carga desejada ou por desconexão física, a sessão é encerrada e esse pacote de dados é enviado para o servidor na nuvem (SEMS Portal), fornecendo os insumos exatos para o cálculo da fatura.
 
 ## 5. Modelos de Negócio para Recarga Compartilhada
-Existem diversos modelos aplicados no mercado para viabilizar o custo da energia:
-* **Recarga Gratuita:** Geralmente oferecida por estabelecimentos (shoppings/hotéis) como marketing para atrair clientes de alto poder aquisitivo.
-* **Cobrança por Tempo:** Focada em alta rotatividade. Cobra-se um valor fixo por hora, desencorajando o usuário a deixar o carro parado após carregar.
-* **Cobrança por kWh Consumido:** O modelo mais justo e recomendado para condomínios. O morador paga exatamente pelo volume de energia que "abasteceu" seu veículo.
-* **Assinatura Mensal (SaaS/Energy as a Service):** O condomínio paga uma mensalidade fixa para uma operadora que gerencia toda a infraestrutura, software e manutenção.
-* **Rateio Condominial:** O custo é dividido entre os usuários, podendo ser feito de forma simples (divisão por igual) ou inteligente (baseado no consumo individual registrado pelo sistema de bilhetagem).
+Para viabilizar financeiramente essa infraestrutura, o mercado global e o brasileiro têm adotado diferentes estratégias de cobrança:
+- Recarga Gratuita: Geralmente é absorvida como despesa de marketing por estabelecimentos comerciais (shoppings e hotéis) para atrair clientes de alto poder aquisitivo. Portanto, é um modelo insustentável para a realidade dos condomínios residenciais.
+- Cobrança por Tempo: Esse modelo é focado em garantir a alta rotatividade das vagas. O usuário paga uma taxa fixa por minuto/hora, o que o desestimula a abandonar o carro na vaga após a carga estar completa.
+- Cobrança por kWh Consumido: É o padrão global e o modelo uqe melhor é inserido dentro do contexto dos condomínios. O morador paga exatamente pelo volume de energia que foi para o seu veículo, garantindo transparência financeira.
+- Assinatura Mensal (Energy as a Service): O condomínio paga uma mensalidade fixa para uma operadora terceirizada, que fica responsável por assumir a gestão da infraestrutura, a manutenção do hardware e a operação do software de faturamento.
+- Rateio Condominial Simples: A pior das opções operacionais, visto a falta de transparência com todos os condôminos. Isso acontece pois o custo da energia consumida pelo carregador da área comum cai na conta de luz geral e o síndico rateia o valor igualmente entre todos os moradores. Esse cenário gera extrema injustiça, pois obriga condôminos sem veículos elétricos a pagarem pelo consumo dos vizinhos.
 
 <div align="center">
   <h1>Pesquisa de mercado e análise de concorrentes</h1>
